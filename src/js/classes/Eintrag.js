@@ -1,6 +1,6 @@
-"use strict"
+import haushaltsbuch from "./../main.js";
 
-class Eintrag {
+export class Eintrag {
 
     title;
     amount;
@@ -8,24 +8,20 @@ class Eintrag {
     date;
     timestamp;
     #html;
-    #hb;
 
-    constructor(title, amount, type, date, instance, timestamp) {
+    constructor(title, amount, type, date, timestamp) {
 
         this.title = title;
         this.amount = amount;
         this.type = type;
         this.date = date;
         this.timestamp = Date.now();
-        this.#hb = instance;
 
         if (timestamp) {
             this.timestamp = timestamp;
         }
 
         this.#html = this.generateHTML();
-
-
     }
 
     /**
@@ -108,7 +104,7 @@ class Eintrag {
         button.setAttribute("class", "entfernen-button");
         button.addEventListener("click", e => {
             e.preventDefault();
-            this.#hb.remove(this);
+            haushaltsbuch.remove(this);
         });
 
         betrag.insertAdjacentElement("afterend", button);

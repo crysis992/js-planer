@@ -1,6 +1,6 @@
-"use strict"
+import { Monatsliste } from "./Monatsliste.js";
 
-class Monatslistensammlung {
+export class Monatslistensammlung {
 
     /** @type {Map} */
     #monthlists;

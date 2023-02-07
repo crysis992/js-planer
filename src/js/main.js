@@ -1,10 +1,7 @@
-"use strict";
+import { Haushaltsbuch } from "./classes/Haushaltsbuch.js";
 
-const haushaltsbuch = new Haushaltsbuch();
-
+let haushaltsbuch = new Haushaltsbuch();
 haushaltsbuch.load();
 
-// haushaltsbuch.debug(5);
-// haushaltsbuch.debug(5, 5);
 
-setTimeout(e => haushaltsbuch.save(), 3000);
+export default haushaltsbuch;

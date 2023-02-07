@@ -1,6 +1,4 @@
-"use strict"
-
-class Monatsliste {
+export class Monatsliste {
 
     #year;
     #month;

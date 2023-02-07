@@ -1,16 +1,19 @@
-"use strict"
+import { Navigationsleiste } from "./Navigationsleiste.js";
+import { Eingabeformular } from "./Eingabeformular.js";
+import { Gesamtbilanz } from "./Gesamtbilanz.js";
+import { Monatslistensammlung } from "./Monatslistensammlung.js";
+import { Eintrag } from "./Eintrag.js";
 
-class Haushaltsbuch {
+export class Haushaltsbuch {
 
     #monatslistensammlung;
     #gesamtbilanz;
 
     constructor() {
         new Navigationsleiste("Crytec - Planer");
-        new Eingabeformular().anzeigen();
+        new Eingabeformular(this).anzeigen();
         this.#gesamtbilanz = new Gesamtbilanz();
         this.#monatslistensammlung = new Monatslistensammlung();
-        Eintrag.hb = this;
     }
 
     render() {
@@ -43,9 +46,9 @@ class Haushaltsbuch {
         let entry;
 
         if (formdata.timestamp) {
-            entry = new Eintrag(formdata.title, formdata.amount, formdata.type, formdata.date, this, formdata.timestamp);
+            entry = new Eintrag(formdata.title, formdata.amount, formdata.type, formdata.date, formdata.timestamp);
         } else {
-            entry = new Eintrag(formdata.title, formdata.amount, formdata.type, formdata.date, this);
+            entry = new Eintrag(formdata.title, formdata.amount, formdata.type, formdata.date);
         }
 
 

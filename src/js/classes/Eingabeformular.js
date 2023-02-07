@@ -1,6 +1,6 @@
-"use strict"
+import haushaltsbuch from "./../main.js";
 
-class Eingabeformular {
+export class Eingabeformular {
 
     #html;
 
@@ -32,8 +32,6 @@ class Eingabeformular {
                 return;
             }
             // Eintrag zu dem Haushaltsbuch hinzufügen, falls Daten valide sind.ausgabe
-
-
             haushaltsbuch.add(data);
             this.#reset();
             this.#setDate();

@@ -1,6 +1,4 @@
-"use strict"
-
-class Gesamtbilanz {
+export class Gesamtbilanz {
 
     #einnahmen;
     #ausgaben;

@@ -1,6 +1,4 @@
-"use strict"
-
-class Fehler {
+export class Fehler {
 
     #errorTitle;
     #errorList;
