@@ -1,4 +1,4 @@
-export class Fehler {
+export class Fehlerbox {
 
     #errorTitle;
     #errorList;
@@ -33,7 +33,7 @@ export class Fehler {
     }
 
     show() {
-        this.remove();
+        this.#remove();
         let container = document.querySelector("#eingabeformular-container");
         container.insertAdjacentElement("afterbegin", this.#html);
     }

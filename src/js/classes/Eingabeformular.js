@@ -1,4 +1,5 @@
 import haushaltsbuch from "./../main.js";
+import { Fehlerbox } from "./Fehlerbox.js";
 
 export class Eingabeformular {
 
@@ -23,7 +24,7 @@ export class Eingabeformular {
             }
 
             if (errors.length > 0) {
-                let error = new Fehler("Folgende Felder wurden nicht korrekt ausgefüllt:", errors);
+                let error = new Fehlerbox("Folgende Felder wurden nicht korrekt ausgefüllt:", errors);
                 error.show();
 
                 // this.#showError(errors);
@@ -90,9 +91,9 @@ export class Eingabeformular {
                         <div class="eingabeformular-zeile">
                             <div class="betrag-datum-eingabe-gruppe">
                                 <label for="betrag">Betrag</label>
-                                <input type="number" id="betrag" name="betrag" form="eingabeformular" placeholder="z.B. 10,42" size="10" step="0.01" title="Betrag des Eintrags (max. zwei Nachkommastellen, kein €-Zeichen)" required>
+                                <input type="number" id="betrag" name="betrag" min="0" form="eingabeformular" placeholder="z.B. 10,42" size="10" step="0.01" title="Betrag des Eintrags (max. zwei Nachkommastellen, kein €-Zeichen)" required>
                                 <label for="datum">Datum</label>
-                                <input type="date" id="datum" name="datum" form="eingabeformular" placeholder="jjjj-mm-tt" size="10" title="Datum des Eintrags (Format: jjjj-mm-tt)" required>
+                                <input type="date" id="datum" name="datum" form="eingabeformular" size="10" title="Datum des Eintrags" required>
                             </div>
                         </div>
                         <div class="eingabeformular-zeile">
